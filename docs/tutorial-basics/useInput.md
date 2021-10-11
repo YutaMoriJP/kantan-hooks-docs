@@ -2,9 +2,24 @@
 
 In React, form elements like `input` and `textarea` are usually managed by React. A form element managed by React is called a `Controlled Component`. Creating a React State like `const [value, setValue] = React.useState('')` can become very repetetive. Let's use a custom hook to simplify the task for us!
 
-The `useInput` hook returns an array with 2 elements. The first element is an object that looks like `{ value, onChange }`m which will manage the Form element's state for you. The second element is a function that will reset the input value to the initial value. So, if you passed an empty string to `useInput`, then the value will be updated to an empty string.
+The `useInput` hook returns an array with 2 elements. The first element is an object that has the following structure `{ value, onChange }` and it will manage the Form element's state for you. The second element is a function that will reset the input value to the initial value. So, if you passed an empty string to `useInput`, then the value will be updated to an empty string.
 
-See the simple example below:
+## The Syntax
+
+```jsx
+const [inputFields, resetState] = useInput("");
+```
+
+### The API
+
+| State                 | Type     | Explanation                                                                                                                                                                                                                                                          |
+| --------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `{ value, onChange }` | Object   | The `{ value, onChange }` object is passed directly to the Form element, and it will manage the state. You can use the [`spread syntax`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax), like `<input {...inputFields}>` |
+| `resetState`          | Function | A helper function that will update the value state to the initial state passed to the hook                                                                                                                                                                           |
+
+### Example
+
+[CodeSandbox](https://rrbuc.csb.app/input)
 
 ```jsx title="src/Input.js"
 import { useInput } from "kantan-hooks";

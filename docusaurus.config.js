@@ -24,7 +24,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
-          editUrl: "https://github.com/facebook/docusaurus/edit/main/website/",
+          editUrl: "https://github.com/YutaMoriJP/kantan-hooks/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -46,7 +46,7 @@ const config = {
             label: "Tutorial",
           },
           {
-            href: "https://github.com/facebook/docusaurus",
+            href: "https://github.com/YutaMoriJP/kantan-hooks",
             label: "GitHub",
             position: "right",
           },
@@ -68,21 +68,13 @@ const config = {
             title: "Community",
             items: [
               {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
-              },
-              {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
+                label: "GitHub",
+                href: "https://github.com/YutaMoriJP/kantan-hooks/",
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} kantan-hooks.`,
       },
       prism: {
         theme: lightCodeTheme,
