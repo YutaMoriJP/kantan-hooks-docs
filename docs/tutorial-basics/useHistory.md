@@ -12,7 +12,13 @@ const [state, setState] = useState(null);
 const { history, filterHistory, clearHistory } = useHistory(historyState);
 ```
 
-## The API
+### Argument
+
+| Argument       | Type  | Explanation                                                                                       |
+| -------------- | ----- | ------------------------------------------------------------------------------------------------- |
+| `historyState` | `any` | Pass a React State that will be updated together with the `state` that you want to keep track of. |
+
+### The API
 
 | State         | Type     | Explanation                                                                                                                                                                                                                                                                                                                          |
 | ------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -20,7 +26,7 @@ const { history, filterHistory, clearHistory } = useHistory(historyState);
 | filterHistory | Function | A filter function that removes an element from the history state. You must pass an object with an index property like `{index: 1}`, which removes the element at index 1. You can also pass an object with an `id` property like `{id:99}`, but for that, the elements in the history state must be an object with an `id` property. |
 | clearHistory  | Function | Clears the history state. Calling the function will update the history state to an empty array.                                                                                                                                                                                                                                      |
 
-## Example
+### Example
 
 In the code example below, you can create a user profile with attributes like `name` and `age`. When the `onSubmit` event fires, the `user` and `historyState` is updated to an object that can look like `{ name: 'Messi', age: 34, id: 99} `. And as the `historyState` is updated, `history` gets also updated and pushes the newly created user to the `history` array. Let's assume the you have made more than 10 updates. The `history` state then will have 10 user elements. However, if you want to change the `user` state to a profile that you created in your 4th update, then the `history` state can help you out with that. The `revertUser` function receives an old user profile and updates the `user` state to that old profile. See the demo below to make sense of it.
 

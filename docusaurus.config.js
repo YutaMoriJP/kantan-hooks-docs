@@ -1,4 +1,4 @@
-// @ts-check
+// @ts-nocheck
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
@@ -7,7 +7,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Kantan-Hooks",
-  tagline: "Simple custom React Hooks for your projects.",
+  tagline: "🚧Simple custom React Hooks for your projects.🚧",
   url: "https://your-docusaurus-test-site.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
@@ -75,6 +75,11 @@ const config = {
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} kantan-hooks.`,
+      },
+      colorMode: {
+        defaultMode: "dark",
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
       },
       prism: {
         theme: lightCodeTheme,

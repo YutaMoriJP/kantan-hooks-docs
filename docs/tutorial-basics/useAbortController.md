@@ -7,18 +7,24 @@ The `useAbortController` hook helps you to abort a fetch request with the AbortC
 ## The Syntax
 
 ```jsx
-const abortController = useAbortController(false);
+const abortController = useAbortController(bool);
 //in your network request
 fetch(url, { ...params, signal: abortController.signal });
 ```
 
-## The API
+### Argument
+
+| Argument | Type      | Explanation                                                                                             |
+| -------- | --------- | ------------------------------------------------------------------------------------------------------- |
+| `bool`   | `boolean` | If you want to instantiate a new AbortController instance after a request is aborted, then pass `true`. |
+
+### The API
 
 | State             | Type              | Explanation                                                                                                                                                                                                                                                                                |
 | ----------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `abortController` | `AbortController` | The `useAbortController` hook returns an instance of the AbortController interface. Simply pass the signal property to the fetch API. If you pass the boolean value `true` to the hook, then a new abort controller instance will be instantiated after the previous instance was aborted. |
 
-## Example
+### Example
 
 By using the `useAbortController` hook, you do not need to handle the native `AbortController` API. Simply pass the abortController.signal to your fetch function and the request will be aborted if necessary. The `useFetch` hook uses the `useAbortController` hook as well.
 

@@ -21,6 +21,13 @@ const { idle, pending, resolved, rejected, error } = useClipboard(
 );
 ```
 
+### Argument
+
+| Argument | Type      | Explanation                                                 |
+| -------- | --------- | ----------------------------------------------------------- |
+| `value`  | `string`  | The value that you want to be copied to the clipboard..     |
+| `copied` | `boolean` | A boolean that will be toggled when an user action happens. |
+
 ### The API
 
 | State      | Type      | Explanation                                                                                 |

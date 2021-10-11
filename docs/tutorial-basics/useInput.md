@@ -7,8 +7,14 @@ The `useInput` hook returns an array with 2 elements. The first element is an ob
 ## The Syntax
 
 ```jsx
-const [inputFields, resetState] = useInput("");
+const [inputFields, resetState] = useInput(initial);
 ```
+
+### Argument
+
+| Argument  | Type                               | Explanation                                                                                                                                                                         |
+| --------- | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `initial` | `string` or `number` or `function` | The argument to `useInput` should be the initial value that your form element should have. If you want to lazily load your initial state, then you can do so by passing a function. |
 
 ### The API
 

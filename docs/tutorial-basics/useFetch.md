@@ -23,7 +23,7 @@ const fetchData = (url, params, abortController) => {
 };
 ```
 
-## useFetch arguments
+### Arguments
 
 | Argument             | Type       | Explanation                                                                                                                                                                                     |
 | -------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -31,7 +31,7 @@ const fetchData = (url, params, abortController) => {
 | `fetchData`          | `function` | Your data fetching function, which receive the `url` and the `opions` object                                                                                                                    |
 | `options` (optional) | `object`   | The `options` object will be passed to fetchData function, and should be the second argument that the `fetch ` API accepts. But if it's a simple GET request, then you do not have to pass one. |
 
-## The API
+### The API
 
 | State      | Type               | Explanation                                                                                                   |
 | ---------- | ------------------ | ------------------------------------------------------------------------------------------------------------- |
@@ -41,7 +41,7 @@ const fetchData = (url, params, abortController) => {
 | `data`     | `any`              | Represents the data returned from the request.                                                                |
 | `error`    | `Error ` or `null` | If the request was rejected, then the error state will point at the Error object and explain what went wrong. |
 
-## Example
+### Example
 
 [CodeSandbox](https://rrbuc.csb.app/fetch)
 
