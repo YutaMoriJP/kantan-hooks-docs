@@ -14,14 +14,14 @@ const [inputFields, resetState] = useInput(initial);
 
 | Argument  | Type                               | Explanation                                                                                                                                                                         |
 | --------- | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `initial` | `string` or `number` or `function` | The argument to `useInput` should be the initial value that your form element should have. If you want to lazily load your initial state, then you can do so by passing a function. |
+| `initial` | `String` or `Number` or `Function` | The argument to `useInput` should be the initial value that your form element should have. If you want to lazily load your initial state, then you can do so by passing a function. |
 
 ### The API
 
-| State                 | Type     | Explanation                                                                                                                                                                                                                                                          |
-| --------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `{ value, onChange }` | Object   | The `{ value, onChange }` object is passed directly to the Form element, and it will manage the state. You can use the [`spread syntax`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax), like `<input {...inputFields}>` |
-| `resetState`          | Function | A helper function that will update the value state to the initial state passed to the hook                                                                                                                                                                           |
+| State                 | Type       | Explanation                                                                                                                                                                                                                                                          |
+| --------------------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `{ value, onChange }` | `Object`   | The `{ value, onChange }` object is passed directly to the Form element, and it will manage the state. You can use the [`spread syntax`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax), like `<input {...inputFields}>` |
+| `resetState`          | `Function` | A helper function that will update the value state to the initial state passed to the hook                                                                                                                                                                           |
 
 ### Example
 

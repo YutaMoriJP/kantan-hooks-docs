@@ -38,16 +38,16 @@ const { open, onOpen, onClose, toggle } = useToggle(initial);
 
 | Argument  | Type      | Explanation                                    |
 | --------- | --------- | ---------------------------------------------- |
-| `initial` | `boolean` | The initial boolean value of the `open` state. |
+| `initial` | `Boolean` | The initial boolean value of the `open` state. |
 
 ### The API
 
 | State     | Type       | Explanation                                                                                 |
 | --------- | ---------- | ------------------------------------------------------------------------------------------- |
-| `open`    | `boolean`  | A boolen state that will be updated when the state setter functions are called.             |
-| `onOpen`  | `function` | A state setter function that updates the `open` state to `true`                             |
-| `onClose` | `function` | A state setter function that updates the `open` state to `false`                            |
-| `toggle`  | `function` | A state setter function that toggles the `open` state from `true` to `false` or vice versa. |
+| `open`    | `Boolean`  | A boolen state that will be updated when the state setter functions are called.             |
+| `onOpen`  | `Function` | A state setter function that updates the `open` state to `true`                             |
+| `onClose` | `Function` | A state setter function that updates the `open` state to `false`                            |
+| `toggle`  | `Function` | A state setter function that toggles the `open` state from `true` to `false` or vice versa. |
 
 ### Example
 

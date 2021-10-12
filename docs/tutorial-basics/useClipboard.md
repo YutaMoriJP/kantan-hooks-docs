@@ -25,17 +25,17 @@ const { idle, pending, resolved, rejected, error } = useClipboard(
 
 | Argument | Type      | Explanation                                                 |
 | -------- | --------- | ----------------------------------------------------------- |
-| `value`  | `string`  | The value that you want to be copied to the clipboard..     |
-| `copied` | `boolean` | A boolean that will be toggled when an user action happens. |
+| `value`  | `String`  | The value that you want to be copied to the clipboard..     |
+| `copied` | `Boolean` | A boolean that will be toggled when an user action happens. |
 
 ### The API
 
 | State      | Type      | Explanation                                                                                 |
 | ---------- | --------- | ------------------------------------------------------------------------------------------- |
-| `idle`     | `boolean` | The initial state - nothing has happened.                                                   |
-| `pending`  | `boolean` | The asynchronous copying operation has started.                                             |
-| `resolved` | `boolean` | The asynchronous copying operation has finished, i.e. the value is copied to the Clipboard. |
-| `rejected` | `boolean` | The copying operation was rejected for some reason.                                         |
+| `idle`     | `Boolean` | The initial state - nothing has happened.                                                   |
+| `pending`  | `Boolean` | The asynchronous copying operation has started.                                             |
+| `resolved` | `Boolean` | The asynchronous copying operation has finished, i.e. the value is copied to the Clipboard. |
+| `rejected` | `Boolean` | The copying operation was rejected for some reason.                                         |
 | `error`    | `Error`   | An error object that will contain a message property with what went wrong.                  |
 
 ### Example

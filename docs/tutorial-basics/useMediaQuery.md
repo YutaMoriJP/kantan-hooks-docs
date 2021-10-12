@@ -14,13 +14,13 @@ const matches = useMediaQuery(mediaQueryString);
 
 | Argument           | Type     | Explanation                                                                                                             |
 | ------------------ | -------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `mediaQueryString` | `string` | Pass a media query like `(max-width: 450px)` if you want to know whether the user's device width is smaller than 450px. |
+| `mediaQueryString` | `String` | Pass a media query like `(max-width: 450px)` if you want to know whether the user's device width is smaller than 450px. |
 
 ### The API
 
 | State     | Type      | Explanation                                                                                                                   |
 | --------- | --------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `matches` | `boolean` | If the given query string matches with the user's viewport, the returned state value is true. If not then `false` is returned |
+| `matches` | `Boolean` | If the given query string matches with the user's viewport, the returned state value is true. If not then `false` is returned |
 
 ### Example
 

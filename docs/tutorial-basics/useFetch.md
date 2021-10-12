@@ -27,17 +27,17 @@ const fetchData = (url, params, abortController) => {
 
 | Argument             | Type       | Explanation                                                                                                                                                                                     |
 | -------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `url`                | `string`   | Location of the resource, like an API URL                                                                                                                                                       |
-| `fetchData`          | `function` | Your data fetching function, which receive the `url` and the `opions` object                                                                                                                    |
-| `options` (optional) | `object`   | The `options` object will be passed to fetchData function, and should be the second argument that the `fetch ` API accepts. But if it's a simple GET request, then you do not have to pass one. |
+| `url`                | `String`   | Location of the resource, like an API URL                                                                                                                                                       |
+| `fetchData`          | `Function` | Your data fetching function, which receive the `url` and the `opions` object                                                                                                                    |
+| `options` (optional) | `Object`   | The `options` object will be passed to fetchData function, and should be the second argument that the `fetch ` API accepts. But if it's a simple GET request, then you do not have to pass one. |
 
 ### The API
 
 | State      | Type               | Explanation                                                                                                   |
 | ---------- | ------------------ | ------------------------------------------------------------------------------------------------------------- |
-| `pending`  | `boolean`          | Once the request has started, the pending state will be `true`                                                |
-| `resolved` | `boolean`          | Once the request has resolved, then the resolved state will be `true`                                         |
-| `rejected` | `boolean`          | If you request was rejected, then the rejected state will be `true`                                           |
+| `pending`  | `Boolean`          | Once the request has started, the pending state will be `true`                                                |
+| `resolved` | `Boolean`          | Once the request has resolved, then the resolved state will be `true`                                         |
+| `rejected` | `Boolean`          | If you request was rejected, then the rejected state will be `true`                                           |
 | `data`     | `any`              | Represents the data returned from the request.                                                                |
 | `error`    | `Error ` or `null` | If the request was rejected, then the error state will point at the Error object and explain what went wrong. |
 

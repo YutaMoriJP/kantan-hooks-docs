@@ -16,7 +16,7 @@ fetch(url, { ...params, signal: abortController.signal });
 
 | Argument | Type      | Explanation                                                                                             |
 | -------- | --------- | ------------------------------------------------------------------------------------------------------- |
-| `bool`   | `boolean` | If you want to instantiate a new AbortController instance after a request is aborted, then pass `true`. |
+| `bool`   | `Boolean` | If you want to instantiate a new AbortController instance after a request is aborted, then pass `true`. |
 
 ### The API
 

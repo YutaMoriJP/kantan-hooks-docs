@@ -13,7 +13,7 @@ const [state, setState] = useLocalStorage(initialState, localStorageKeyValue);
 | Argument               | Type     | Explanation                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | ---------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `initialState`         | `any`    | Pass the state value that you want to manage, like in a normal `useState` hook.                                                                                                                                                                                                                                                                                                                                               |
-| `localStorageKeyValue` | `string` | This is different from a `useState` hook, but it's essential for the `useLocalStorage` hook. Pass a unique key value, and it will be used as the key reference for the state stored in the LocalStorage API. You can update it if you want, and the hook will make sure to remove the old item from the LocalStorage API. You have to manage the uniqueness of the key value or else you may end up overwriting stored items. |
+| `localStorageKeyValue` | `String` | This is different from a `useState` hook, but it's essential for the `useLocalStorage` hook. Pass a unique key value, and it will be used as the key reference for the state stored in the LocalStorage API. You can update it if you want, and the hook will make sure to remove the old item from the LocalStorage API. You have to manage the uniqueness of the key value or else you may end up overwriting stored items. |
 
 ### The API
 
@@ -30,7 +30,7 @@ If you want to keep a reference to the user's preferred theme option, then the `
 import { useLocalStorage } from "kantan-hooks";
 
 export default function LocalStorage() {
-  const [theme, setTheme] = useLocalStorage("theme", "dark");
+  const [theme, setTheme] = useLocalStorage("dark", "theme");
   const newTheme = theme === "dark" ? "light" : "dark";
   return (
     <div>
