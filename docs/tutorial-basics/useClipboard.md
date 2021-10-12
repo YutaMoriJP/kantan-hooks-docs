@@ -2,7 +2,7 @@
 
 The `useClipboard` hook helps you to easily use the copying feature from the [`Clipboard API`](https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API).
 
-The `useClipboard` hook accepts 2 arguments. The first argument is the value that you want to be copied to the user's clipboard. The second argument is boolean state that should update if the user chooses to copy something to their clipboard, like a code example. Note that the value of the boolean does not matter. It can update from `true` to `false` or vice versa. What matters is that the boolean state is updated, like after clicking a button, `<button>copy</button>`.
+The `useClipboard` hook accepts 2 arguments. The first argument is the value that you want to be copied to the user's clipboard. The second argument is a boolean state that should update if the user chooses to copy something to their clipboard, like a code example. Note that the value of the boolean does not matter. It can update from `true` to `false` or vice versa. What matters is that the boolean state is updated, like after clicking a button, `<button>copy</button>`.
 
 ```jsx
 //The first argument is the value that will be copied to the clipboard
