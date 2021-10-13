@@ -2,21 +2,21 @@
 
 This hook was inspired from this [medium](https://medium.com/doctolib/react-stop-checking-if-your-component-is-mounted-3bb2568a4934) post.
 
-The `useAbortController` hook helps you to abort a fetch request with the AbortController API. For example, if the component fetching a resource is unmounted, then it's a good idea to abort the request. For that, simple pass a signal property to fetch API like `fetch(url, {signal: abortController.signal})`.
+The `useAbortController` hook helps you to abort a fetch request with the `AbortController` API. For example, if the component fetching a resource is unmounted, then it's a good idea to abort the request. For that, simply pass a `signal` property to the fetch API like `fetch(url, {signal: abortController.signal})`.
 
 ## The Syntax
 
 ```jsx
 const abortController = useAbortController(bool);
-//in your network request
+// your network request
 fetch(url, { ...params, signal: abortController.signal });
 ```
 
 ### Argument
 
-| Argument | Type      | Explanation                                                                                             |
-| -------- | --------- | ------------------------------------------------------------------------------------------------------- |
-| `bool`   | `Boolean` | If you want to instantiate a new AbortController instance after a request is aborted, then pass `true`. |
+| Argument | Type      | Explanation                                                                                               |
+| -------- | --------- | --------------------------------------------------------------------------------------------------------- |
+| `bool`   | `Boolean` | If you want to instantiate a new `AbortController` instance after a request is aborted, then pass `true`. |
 
 ### The API
 

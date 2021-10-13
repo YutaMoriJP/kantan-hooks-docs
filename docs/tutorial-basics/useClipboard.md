@@ -40,6 +40,8 @@ const { idle, pending, resolved, rejected, error } = useClipboard(
 
 ### Example
 
+[CodeSandbox](https://rrbuc.csb.app/clipboard)
+
 Although it's not mandatory, you can use the `useToggle` hook to manage the boolean state that is needed for the `useClipboard` hook.
 In the example below, the string value "Hello, World" will be copied to the clipboard if the button is clicked. Note the hook ensures that the value is only copied after the user action happens (`copied` is toggled). The value can also be dynamic, like the value from a form element.
 

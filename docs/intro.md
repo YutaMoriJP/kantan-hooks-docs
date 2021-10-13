@@ -12,7 +12,7 @@ npx create-react-app my-project && cd my-project
 
 ## Installation
 
-Once you have your React project started, install the `kantan-hooks` package by using the command:
+Once you have your React project started, install the `kantan-hooks` package by running the command:
 
 ```shell
 npm install kantan-hooks
@@ -24,7 +24,7 @@ Or do it with yarn:
 yarn add kantan-hooks
 ```
 
-Next, import the hook you need for your component, like the `useToggle` hook to easily manage a boolean state. It returns an object with 4 properties, `open`, `onOpen`, `onClose`, and `toggle`. `open` is a boolean React state, so it's either `true` or `false`. And `onOpen` (updates open to true), `onClose` (updates open to false), and `toggle`(toggles the open state) are the update functions, that will update the `open` state. Play around in [CodeSandbox](https://rrbuc.csb.app/toggle), and try out different things like conditionally rendering a React Component, etc.
+Next, import the hook that you need for your component, like the `useToggle` hook to easily manage a boolean state. It returns an object with 4 properties, `open`, `onOpen`, `onClose`, and `toggle`. `open` is a boolean React state, so it's either `true` or `false`. And `onOpen` (updates open to true), `onClose` (updates open to false), and `toggle`(toggles the open state) are the update functions, that will update the `open` state.
 
 The `useToggle` hook will come in handy in all kinds of situations. Later you will encounter the `useClipboard` hook that simplifies the Clipboard API for you, and the `useToggle` hook will help you out.
 
