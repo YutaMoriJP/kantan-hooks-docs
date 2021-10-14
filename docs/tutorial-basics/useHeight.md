@@ -26,7 +26,7 @@ return <div ref={divRef} />;
 
 [CodeSandbox](https://rrbuc.csb.app/height)
 
-```jsx title=src/Counter.js
+```jsx title=src/Height.js
 import { useHeight } from "kantan-hooks";
 import { useRef } from "react";
 
