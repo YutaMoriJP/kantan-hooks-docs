@@ -24,50 +24,22 @@ Or do it with yarn:
 yarn add kantan-hooks
 ```
 
-Next, import the hook that you need for your component, like the `useToggle` hook to easily manage a boolean state. It returns an object with 4 properties, `open`, `onOpen`, `onClose`, and `toggle`. `open` is a boolean React state, so it's either `true` or `false`. And `onOpen` (updates open to true), `onClose` (updates open to false), and `toggle`(toggles the open state) are the update functions, that will update the `open` state.
+Next, import the hook that you need. For example, the `useLocalStorage` hook helps you to manage a state that will be stored by the `LocalStorage` API.
 
-The `useToggle` hook will come in handy in all kinds of situations. Later you will encounter the `useClipboard` hook that simplifies the Clipboard API for you, and the `useToggle` hook will help you out.
+```jsx title/App.js
+import { useLocalStorage } from "kantan-hooks";
 
-### The Syntax
-
-```jsx
-const { open, onOpen, onClose, toggle } = useToggle(initial);
-```
-
-### Argument
-
-| Argument  | Type      | Explanation                                    |
-| --------- | --------- | ---------------------------------------------- |
-| `initial` | `Boolean` | The initial boolean value of the `open` state. |
-
-### The API
-
-| State     | Type       | Explanation                                                                                 |
-| --------- | ---------- | ------------------------------------------------------------------------------------------- |
-| `open`    | `Boolean`  | A boolen state that will be updated when the state setter functions are called.             |
-| `onOpen`  | `Function` | A state setter function that updates the `open` state to `true`                             |
-| `onClose` | `Function` | A state setter function that updates the `open` state to `false`                            |
-| `toggle`  | `Function` | A state setter function that toggles the `open` state from `true` to `false` or vice versa. |
-
-### Example
-
-```jsx title="src/App.js"
-import { useToggle } from "kantan-hooks";
-
-export default function App() {
-  //destruct the object returned by useToggle
-  const { open, onOpen, onClose, toggle } = useToggle(false);
+export default function LocalStorage() {
+  const [theme, setTheme] = useLocalStorage("dark", "theme");
+  const newTheme = theme === "dark" ? "light" : "dark";
   return (
-    <>
-      <h1>Turn the Switch on/off</h1>
-      <button onClick={toggle}>Toggle Switch</button>
-      <button onClick={onOpen} disabled={open}>
-        Turn on
+    <div>
+      <h1>current theme {theme}</h1>
+      <button onClick={() => setTheme(newTheme)}>change Theme</button>
+      <button onClick={() => window.location.reload()}>
+        Refresh window and check if your state persists!
       </button>
-      <button onClick={onClose} disabled={!open}>
-        Turn off
-      </button>
-    </>
+    </div>
   );
 }
 ```
