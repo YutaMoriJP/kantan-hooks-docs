@@ -1,6 +1,6 @@
 # usePosition
 
-The `usePosition` hook returns an `object` with data representing the space around the DOM node. For example, if the space above a DOM node is 100px, space below the DOM node is 150px, space left to the DOM node is 200px, and space right to the DOM node is 250px, then the hook returns the following object `{ top: 100, right: 250, bottom: 150, left: 200 }`. Whenever you want to how much space is available around a DOM node, then the `usePosition` hook will help you.
+The `usePosition` hook returns an `object` with data representing the space around the DOM node. For example, if the space above a DOM node is 100px, space below the DOM node is 150px, space left to the DOM node is 200px, and space right to the DOM node is 250px, then the hook returns the following object `{ top: 100, right: 250, bottom: 150, left: 200 }`. Whenever you want to know how much space is available around a DOM node, then the `usePosition` hook will help you.
 
 ## The Syntax
 
