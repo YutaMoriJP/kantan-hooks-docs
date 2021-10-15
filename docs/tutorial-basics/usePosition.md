@@ -23,6 +23,8 @@ const position = usePosition(ref);
 
 ### Example
 
+Resize the window and see how the position values update as the space around the `seagreen` box changes.
+
 [CodeSandbox](https://rrbuc.csb.app/position)
 
 ```jsx
