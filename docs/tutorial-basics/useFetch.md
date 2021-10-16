@@ -25,11 +25,11 @@ const fetchData = (url, params, abortController) => {
 
 ### Arguments
 
-| Argument             | Type       | Explanation                                                                                                                                                                                     |
-| -------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `url`                | `String`   | Location of the resource, like an API URL                                                                                                                                                       |
-| `fetchData`          | `Function` | Your data fetching function, which receive the `url` and the `opions` object                                                                                                                    |
-| `options` (optional) | `Object`   | The `options` object will be passed to fetchData function, and should be the second argument that the `fetch ` API accepts. But if it's a simple GET request, then you do not have to pass one. |
+| Argument             | Type       | Explanation                                                                                                                                                                                       |
+| -------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `url`                | `String`   | Location of the resource, like an API endpoint.                                                                                                                                                   |
+| `fetchData`          | `Function` | Your data fetching function, which receive the `url` and the `opions` object                                                                                                                      |
+| `options` (optional) | `Object`   | The `options` object will be passed to `fetchData` function, and should be the second argument that the `fetch ` API accepts. But if it's a simple GET request, then you do not have to pass one. |
 
 ### The API
 

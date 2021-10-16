@@ -20,13 +20,13 @@ fetch(url, { ...params, signal: abortController.signal });
 
 ### The API
 
-| State             | Type              | Explanation                                                                                                                                                                                                                                                                                |
-| ----------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `abortController` | `AbortController` | The `useAbortController` hook returns an instance of the AbortController interface. Simply pass the signal property to the fetch API. If you pass the boolean value `true` to the hook, then a new abort controller instance will be instantiated after the previous instance was aborted. |
+| State             | Type              | Explanation                                                                                                                                                                                                                                                                               |
+| ----------------- | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `abortController` | `AbortController` | The `useAbortController` hook returns an instance of the AbortController interface. Simply pass the signal property to the fetch API. If you pass the boolean value `true` to the hook, then a new abort controller instance will be instantiated after the previous request was aborted. |
 
 ### Example
 
-By using the `useAbortController` hook, you do not need to handle the native `AbortController` API. Simply pass the abortController.signal to your fetch function and the request will be aborted if necessary. The `useFetch` hook uses the `useAbortController` hook as well.
+By using the `useAbortController` hook, you do not need to handle the native `AbortController` API. Simply pass the abortController.signal to your fetch function and the request will be aborted if necessary. The `useFetch` hook uses the `useAbortController` hook under the hood as well.
 
 [CodeSandbox](https://rrbuc.csb.app/abort)
 

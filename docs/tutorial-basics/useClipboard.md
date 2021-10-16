@@ -25,7 +25,7 @@ const { idle, pending, resolved, rejected, error } = useClipboard(
 
 | Argument | Type      | Explanation                                                 |
 | -------- | --------- | ----------------------------------------------------------- |
-| `value`  | `String`  | The value that you want to be copied to the clipboard..     |
+| `value`  | `String`  | The value that you want to be copied to the clipboard.      |
 | `copied` | `Boolean` | A boolean that will be toggled when an user action happens. |
 
 ### The API
