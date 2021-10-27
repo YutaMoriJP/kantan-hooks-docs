@@ -18,12 +18,14 @@ const [matches, resolved] = useMediaQuery(mediaQueryString);
 
 ### The API
 
-| State      | Type      | Explanation                                                                                                                   |
-| ---------- | --------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `matches`  | `Boolean` | If the given query string matches with the user's viewport, the returned state value is true. If not then `false` is returned |
-| `resolved` | `Boolean` | If false, then the hook has not matched the media query to the viewport yet. This i is necessary for server side application  |
+| State      | Type      | Explanation                                                                                                                                              |
+| ---------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `matches`  | `Boolean` | If the given query string matches with the user's viewport, the returned state value is true. If not then `false` is returned                            |
+| `resolved` | `Boolean` | If `false`, then the hook has not matched the media query to the viewport yet. This is necessary for apps that use server side rendering. See Example 2. |
 
-### Example
+This reading[https://www.joshwcomeau.com/react/the-perils-of-rehydration/] might be useful to understand why the `resolved` value is necessary for apps that use Frameworks like Gatsby or Next.
+
+### Example 1
 
 [CodeSandbox](https://rrbuc.csb.app/mediaquery)
 
@@ -34,7 +36,7 @@ const App = () => {
   const [isTablet, tabletResolved] = useMediaQuery(
     "(min-width:500px) and (max-width:900px)"
   );
-  //client side apps don't need to worry about this. But if your app runs server side, then this checker is necessary.
+  //client side apps don't need to worry about this. But if your app uses server side rendering, then this checker is necessary.
   if (!mobileResolved) return null;
   if (isMobile)
     return (
@@ -49,5 +51,35 @@ const App = () => {
   //redacted for readability
   if (isTablet) return null;
   return null;
+};
+```
+
+### Example 2
+
+[CodeSandbox](https://rrbuc.csb.app/mediaquery)
+
+```jsx
+import { useMediaQuery } from "kantan-hooks";
+const App = () => {
+  const [isMobile, resolved] = useMediaQuery("(max-width: 500px)");
+  //this could also be a Loading animation
+  if (!resolved) return null;
+  //if this block executes, then the media query has been matched to the viewport
+  if (isMobile)
+    return (
+      <div>
+        <h1>The viewport is pretty small</h1>
+        <p>
+          It might be a good idea to render a mobile specific navbar or
+          something.
+        </p>
+      </div>
+    );
+  //redacted for readability
+  return (
+    <div>
+      <h1>Use a Desktop UI</h1>
+    </div>
+  );
 };
 ```
