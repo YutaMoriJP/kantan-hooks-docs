@@ -2,12 +2,12 @@
 
 The `useMediaQuery` can come in handy if you want to display a different UI, depending on the user's viewport, like mobile and desktop.
 
-The `useMediaQuery` hook returns an array of boolean values if the media query string that you pass to the hook matches with the user's viewport. For example, if you call `useMediaQuery("(max-width: 500px)")` and the user's viewport is smaller than `500px`, then the hook return an array with the first element's value being `true`. If your React app uses client side rendering, then that's all you need. However, if you use a framework like NextJS that runs your code first server side, then you need to make use of the second element. The second value is a `boolean` state that tells you that the hook finished matching the media query with the viewport. This is necessary since the hook uses the `window` object under the hood, but that only exists in the browser, and is `undefined` server-side.
+The `useMediaQuery` hook returns the boolean value `true` if the media query string that you pass to the hook matches with the user's viewport. For example, if you call `useMediaQuery("(max-width: 500px)")` and the user's viewport is smaller than `500px`, then the hook return the value`true`. If your React app uses client side rendering, then that's all you need. However, if you use a framework like NextJS that runs your code first server side, then you might want to take advantage of the `useMounted` hook. Check out Example 2.
 
 ## The Syntax
 
 ```jsx
-const [matches, resolved] = useMediaQuery(mediaQueryString);
+const matches = useMediaQuery(mediaQueryString);
 ```
 
 ### Argument
@@ -18,12 +18,9 @@ const [matches, resolved] = useMediaQuery(mediaQueryString);
 
 ### The API
 
-| State      | Type      | Explanation                                                                                                                                              |
-| ---------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `matches`  | `Boolean` | If the given query string matches with the user's viewport, the returned state value is true. If not then `false` is returned                            |
-| `resolved` | `Boolean` | If `false`, then the hook has not matched the media query to the viewport yet. This is necessary for apps that use server side rendering. See Example 2. |
-
-This reading[https://www.joshwcomeau.com/react/the-perils-of-rehydration/] might be useful to understand why the `resolved` value is necessary for apps that use Frameworks like Gatsby or Next.
+| State     | Type      | Explanation                                                                                                                   |
+| --------- | --------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `matches` | `Boolean` | If the given query string matches with the user's viewport, the returned state value is true. If not then `false` is returned |
 
 ### Example 1
 
@@ -32,12 +29,9 @@ This reading[https://www.joshwcomeau.com/react/the-perils-of-rehydration/] might
 ```jsx
 import { useMediaQuery } from "kantan-hooks";
 const App = () => {
-  const [isMobile, mobileResolved] = useMediaQuery("(max-width: 500px)");
-  const [isTablet, tabletResolved] = useMediaQuery(
-    "(min-width:500px) and (max-width:900px)"
-  );
+  const isMobile = useMediaQuery("(max-width: 500px)");
+  const isTablet = useMediaQuery("(min-width:500px) and (max-width:900px)");
   //client side apps don't need to worry about this. But if your app uses server side rendering, then this checker is necessary.
-  if (!mobileResolved) return null;
   if (isMobile)
     return (
       <div>
@@ -56,15 +50,16 @@ const App = () => {
 
 ### Example 2
 
+This Example is useful for apps using frameworks like NextJS, GatsbyJS, or any app that is rendered server side.
 [CodeSandbox](https://rrbuc.csb.app/mediaquery)
 
 ```jsx
-import { useMediaQuery } from "kantan-hooks";
+import { useMediaQuery, useMounted } from "kantan-hooks";
 const App = () => {
-  const [isMobile, resolved] = useMediaQuery("(max-width: 500px)");
-  //this could also be a Loading animation
-  if (!resolved) return null;
-  //if this block executes, then the media query has been matched to the viewport
+  const isMobile = useMediaQuery("(max-width: 500px)");
+  //if hasMounted is true, then you know that the component has mounted, and you can use the numerous Web APIs
+  const hasMounted = useMounted();
+  if (!hasMounted) return null;
   if (isMobile)
     return (
       <div>
